@@ -1,0 +1,23 @@
+{
+  "name": "videofinder",
+  "description": "寻找网页里面的视频地址",
+  "version": "1.0",
+  "manifest_version": 3,
+  "permissions": ["webRequest"],
+  "host_permissions": ["http://127.0.0.1:8080/*"],
+  "action": {
+    "default_popup": "index.html",
+    "default_icon": "index.png"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "js": ["scripts/aikanbot.js"],
+      "matches": [
+        "https://v.aikanbot.com/*"
+      ]
+    }
+  ]
+}
